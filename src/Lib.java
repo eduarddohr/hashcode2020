@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 public class Lib {
 	public int nrCarti;
@@ -16,6 +17,6 @@ public class Lib {
 	}
 	
 	public String toString() {
-		return nrCarti + " ";
+		return nrZileInregistrare + " ";
 	}
 }

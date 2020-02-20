@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
 	public static void main(String[] argv) throws FileNotFoundException, IOException {
@@ -37,6 +38,7 @@ public class Main {
 				lib.setIdCarti(idCarti);
 			}
 
+			Collections.sort(biblioteci, new NrZileComparator());
 			System.out.print(biblioteci);
 			
 			int numarLibInscrise = 0;
