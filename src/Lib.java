@@ -5,15 +5,17 @@ public class Lib {
 	public int nrZileInregistrare;
 	public int nrCartiPerZi;
 	public int[] idCarti;
+	public int id;
 	
-	public Lib(int nrC, int nrZile, int nrCp) {
+	public Lib(int nrC, int nrZile, int nrCp, int id) {
 		nrCarti = nrC;
 		nrZileInregistrare = nrZile;
 		nrCartiPerZi = nrCp;
+		this.id = id;
 	}
 	
 	public void setIdCarti(int[] idCarti) {
-		idCarti = idCarti.clone();
+		this.idCarti = idCarti.clone();
 	}
 	
 	public String toString() {
