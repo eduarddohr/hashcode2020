@@ -46,10 +46,17 @@ public class Main {
 			
 			int numarLibInscrise = 100;
 			String textFinal = "";
-			int zileSignUp = 0;
-			
+				
+			int sum = 0;
+			System.out.println(nrZile);
+			while(numarLibInscrise < biblioteci.size() &&
+					sum + biblioteci.get(numarLibInscrise).nrZileInregistrare <= nrZile 
+					) {
+				sum += biblioteci.get(numarLibInscrise++).nrZileInregistrare;
+			}
 
-			
+			int zileSignUp = 0;
+					
 			for(i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
 				textFinal += "\n";
