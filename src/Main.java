@@ -8,7 +8,7 @@ import java.util.Collections;
 
 public class Main {
 	public static void main(String[] argv) throws FileNotFoundException, IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("a.txt"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("b.txt"))) {
 			String line;
 			line = br.readLine();
 
@@ -28,7 +28,7 @@ public class Main {
 				line = br.readLine();
 				splited = line.split("\\s+");
 				Lib lib = new Lib(Integer.parseInt(splited[0]), Integer.parseInt(splited[1]),
-						Integer.parseInt(splited[2]));
+						Integer.parseInt(splited[2]), i);
 
 				biblioteci.add(lib);
 
@@ -41,17 +41,29 @@ public class Main {
 			Collections.sort(biblioteci, new NrZileComparator());
 			System.out.print(biblioteci);
 			
-			int numarLibInscrise = 0;
+			int numarLibInscrise = 100;
 			String textFinal = "";
+			int zileSignUp = 0;
+			
+
 			
 			for(i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
 				textFinal += "\n";
 				for(int j = 0; j < numarLibInscrise; j++) {
+					zileSignUp += biblioteci.get(j).nrZileInregistrare;
+					textFinal += biblioteci.get(j).id + " ";
+					textFinal += nrZile - zileSignUp + "\n";
 					
+					for(int k = 0; k < (nrZile - zileSignUp); k++) {
+						textFinal += biblioteci.get(j).idCarti[k] + " ";
+					}
+					textFinal +="\n";
 				}
 				
 			}
+			
+			System.out.println(textFinal);
 			
 		}
 	}
