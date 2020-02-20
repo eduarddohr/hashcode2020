@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +18,7 @@ public class Main {
 			int nrCarti = Integer.parseInt(splited[0]);
 			int nrLib = Integer.parseInt(splited[1]);
 			int nrZile = Integer.parseInt(splited[2]);
+			FileWriter myWriter = new FileWriter("filename.txt");
 
 			line = br.readLine();
 			splited = line.split("\\s+");
@@ -64,6 +67,7 @@ public class Main {
 			}
 			
 			System.out.println(textFinal);
+			myWriter.write(textFinal);
 			
 		}
 	}
