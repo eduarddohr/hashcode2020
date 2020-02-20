@@ -49,7 +49,7 @@ public class Main {
 			int numarLibInscrise = 0;
 			String textFinal = "";
 
-			int sum = 0;
+			int sum = -1;
 			System.out.println(nrZile);
 //			while (numarLibInscrise < biblioteci.size()
 //					&& sum + biblioteci.get(numarLibInscrise).nrZileInregistrare <= nrZile) {
@@ -57,18 +57,18 @@ public class Main {
 //			}
 			
 			int index = 0;
-			int nrLib2 =0;
+
 			for(index = 0; index < biblioteci.size(); index++) {
 				Lib carte = biblioteci.get(index);
 				if(sum + carte.nrZileInregistrare > nrZile) {
-					nrLib2 = index;
+					numarLibInscrise = index;
 					break;
 				}
 				
 				sum = sum+carte.nrZileInregistrare; 
 			}
 			System.out.println(sum);
-			System.out.println(nrLib2);
+			System.out.println(numarLibInscrise);
 			
 			int zileSignUp = 0;
 
