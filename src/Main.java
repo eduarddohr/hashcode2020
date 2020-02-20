@@ -78,7 +78,7 @@ public class Main {
 //				System.out.println(" ");
 //			}
 
-			for (i = 0; i < numarLibInscrise; i++) {
+			//for (i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
 				textFinal += "\n";
 				for (int j = 0; j < numarLibInscrise; j++) {
@@ -92,10 +92,11 @@ public class Main {
 					textFinal += "\n";
 				}
 
-			}
+			//}
 
-//			System.out.println(textFinal);
+			System.out.println(zileSignUp);
 			myWriter.write(textFinal);
+			myWriter.close();
 
 		}
 	}
