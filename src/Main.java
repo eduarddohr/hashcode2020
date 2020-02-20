@@ -43,6 +43,14 @@ public class Main {
 			
 			int numarLibInscrise = 0;
 			String textFinal = "";
+				
+			int sum = 0;
+			System.out.println(nrZile);
+			while(numarLibInscrise < biblioteci.size() &&
+					sum + biblioteci.get(numarLibInscrise).nrZileInregistrare <= nrZile 
+					) {
+				sum += biblioteci.get(numarLibInscrise++).nrZileInregistrare;
+			}
 			
 			for(i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
