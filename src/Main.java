@@ -44,7 +44,7 @@ public class Main {
 			Collections.sort(biblioteci, new NrZileComparator());
 			System.out.print(biblioteci);
 			
-			int numarLibInscrise = 100;
+			int numarLibInscrise = 0;
 			String textFinal = "";
 				
 			int sum = 0;
@@ -56,8 +56,8 @@ public class Main {
 			}
 
 			int zileSignUp = 0;
-					
-			for(i = 0; i < numarLibInscrise; i++) {
+
+			//for(i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
 				textFinal += "\n";
 				for(int j = 0; j < numarLibInscrise; j++) {
@@ -71,7 +71,7 @@ public class Main {
 					textFinal +="\n";
 				}
 				
-			}
+			//}
 			
 			System.out.println(textFinal);
 			myWriter.write(textFinal);
