@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Main {
+	public static int[] scorCarti;
+
 	public static void main(String[] argv) throws FileNotFoundException, IOException {
 		try (BufferedReader br = new BufferedReader(new FileReader("b.txt"))) {
 			String line;
@@ -22,7 +24,7 @@ public class Main {
 
 			line = br.readLine();
 			splited = line.split("\\s+");
-			int[] scorCarti = Arrays.stream(splited).mapToInt(Integer::parseInt).toArray();
+			scorCarti = Arrays.stream(splited).mapToInt(Integer::parseInt).toArray();
 
 			ArrayList<Lib> biblioteci = new ArrayList<Lib>(nrLib);
 
@@ -43,39 +45,58 @@ public class Main {
 
 			Collections.sort(biblioteci, new NrZileComparator());
 			System.out.print(biblioteci);
-			
+
 			int numarLibInscrise = 0;
 			String textFinal = "";
-				
+
 			int sum = 0;
 			System.out.println(nrZile);
-			while(numarLibInscrise < biblioteci.size() &&
-					sum + biblioteci.get(numarLibInscrise).nrZileInregistrare <= nrZile 
-					) {
-				sum += biblioteci.get(numarLibInscrise++).nrZileInregistrare;
+//			while (numarLibInscrise < biblioteci.size()
+//					&& sum + biblioteci.get(numarLibInscrise).nrZileInregistrare <= nrZile) {
+//				sum += biblioteci.get(numarLibInscrise++).nrZileInregistrare;
+//			}
+			
+			int index = 0;
+			int nrLib2 =0;
+			for(index = 0; index < biblioteci.size(); index++) {
+				Lib carte = biblioteci.get(index);
+				if(sum + carte.nrZileInregistrare > nrZile) {
+					nrLib2 = index;
+					break;
+				}
+				
+				sum = sum+carte.nrZileInregistrare; 
 			}
-
+			System.out.println(sum);
+			System.out.println(nrLib2);
+			
 			int zileSignUp = 0;
 
-			//for(i = 0; i < numarLibInscrise; i++) {
+//			for (i = 0; i < numarLibInscrise; i++) {
+//				biblioteci.get(i).sortCarti();
+//				biblioteci.get(i).printCarti();
+//				System.out.println(" ");
+//			}
+
+			for (i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
 				textFinal += "\n";
-				for(int j = 0; j < numarLibInscrise; j++) {
+				for (int j = 0; j < numarLibInscrise; j++) {
 					zileSignUp += biblioteci.get(j).nrZileInregistrare;
 					textFinal += biblioteci.get(j).id + " ";
 					textFinal += nrZile - zileSignUp + "\n";
-					
-					for(int k = 0; k < (nrZile - zileSignUp); k++) {
+
+					for (int k = 0; k < (nrZile - zileSignUp); k++) {
 						textFinal += biblioteci.get(j).idCarti[k] + " ";
 					}
-					textFinal +="\n";
+					textFinal += "\n";
 				}
-				
-			//}
-			
-			System.out.println(textFinal);
+
+			}
+
+//			System.out.println(textFinal);
 			myWriter.write(textFinal);
-			
+
 		}
 	}
 }
