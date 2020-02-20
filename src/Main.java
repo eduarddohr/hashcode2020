@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] argv) throws FileNotFoundException, IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("a_example.txt"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("a.txt"))) {
 			String line;
 			line = br.readLine();
 
@@ -38,6 +38,19 @@ public class Main {
 			}
 
 			System.out.print(biblioteci);
+			
+			int numarLibInscrise = 0;
+			String textFinal = "";
+			
+			for(i = 0; i < numarLibInscrise; i++) {
+				textFinal += numarLibInscrise;
+				textFinal += "\n";
+				for(int j = 0; j < numarLibInscrise; j++) {
+					
+				}
+				
+			}
+			
 		}
 	}
 }
