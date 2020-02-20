@@ -74,20 +74,24 @@ public class Main {
 
 //			for (i = 0; i < numarLibInscrise; i++) {
 //				biblioteci.get(i).sortCarti();
-//				biblioteci.get(i).printCarti();
-//				System.out.println(" ");
+//				//biblioteci.get(i).printCarti();
+//				//System.out.println(" ");
 //			}
 
 			//for (i = 0; i < numarLibInscrise; i++) {
 				textFinal += numarLibInscrise;
 				textFinal += "\n";
 				for (int j = 0; j < numarLibInscrise; j++) {
+					int numarCarti = (nrZile - zileSignUp) * biblioteci.get(j).nrCartiPerZi;
 					zileSignUp += biblioteci.get(j).nrZileInregistrare;
 					textFinal += biblioteci.get(j).id + " ";
-					textFinal += nrZile - zileSignUp + "\n";
+					textFinal += numarCarti + "\n";
 
-					for (int k = 0; k < (nrZile - zileSignUp); k++) {
+					for (int k = 0; k < (numarCarti); k++) {
 						textFinal += biblioteci.get(j).idCarti[k] + " ";
+						if(biblioteci.get(j).id == 10) {
+							System.out.println("ceva");
+						}
 					}
 					textFinal += "\n";
 				}
